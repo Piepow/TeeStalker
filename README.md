@@ -9,4 +9,4 @@ This is a web app, so simply snatch these files and put them in your server dire
 ## Code Overview
 This is written primarily with JavaScript, with a bit of PHP. Essentially, the user settings stored in the browser local storage are sent to the server; then the stalkee statuses (and some other information) are returned and displayed. Stalkee statuses and actions are displayed and included in browser notifications.
 
-> More detailed information can be found on the [about page](includes/about.inc.php)
+> More detailed information can be found in the [about page](includes/about.inc.php)
