@@ -1,7 +1,7 @@
 # TeeStalker
 
 Receive browser notifications for every move your Teeworlds stalkees make.
-<img src="http://imgur.com/uEOj8mu">
+<img src="http://i.imgur.com/uEOj8mu.png">
 
 ## Installation
 	This is a web app, so simply snatch these files and put them in your server directory. PHP is required.
