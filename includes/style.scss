@@ -1,0 +1,567 @@
+/* 
+ * Space between elements should be either 10px or something
+*/
+
+@font-face {
+    font-family: Bunya Light;
+    font-weight: normal;
+    src: url(BunyaLight.ttf);
+}
+
+$headerFontStack: Bunya Light, Ubuntu, Trebuchet MS, Helvetica, Arial, sans-serif;
+$bodyFontStack: Open Sans, Roboto, Helvetica, sans-serif;
+$condensedFontStack: Open Sans Condensed, Roboto Condensed, Arial Nova Condensed, Arial Condensed, Helvetica Condensed;
+$buttonFontStack: Open Sans, Roboto, Helvetica, sans-serif;
+$monoFontStack: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+$bodyFontSize: 17px;
+$buttonFontSize: 15px;
+
+$navWidth: 200px;
+
+@mixin nullText() {
+	color: #a9a9a9;
+	font-size: 15px;
+	font-weight: 400;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-family: $condensedFontStack;
+}
+
+@mixin box() {
+	margin-bottom: 20px;
+	background: #3a3a3a;
+	color: white;
+	border-radius: 2px;
+	border-bottom: 1px solid #777;
+	font-family: $bodyFontStack;
+	box-shadow: inset 0 0 8px 0 rgba(0,0,0,0.3);
+}
+
+@mixin clearBox() {
+	margin-bottom: 20px;
+	padding: 0;
+	background: none;
+	color: white;
+	border-radius: 0;
+	border-bottom: none;
+	font-family: $bodyFontStack;
+	box-shadow: none;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    display:none;
+}
+
+input[type="checkbox"] + label .weirdPlaceholder {
+    display: inline-block;
+    white-space: nowrap;
+    width: 19px;
+    height: 19px;
+    margin: -2px 10px 0 0;
+    vertical-align: middle;
+    background: url(check_sheet.png) left top no-repeat;
+    cursor: pointer;
+}
+
+input[type="radio"] + label .weirdPlaceholder {
+    display: inline-block;
+    white-space: nowrap;
+    width: 19px;
+    height: 19px;
+    margin: -2px 10px 0 0;
+    vertical-align: middle;
+    background: url(check_sheet.png) -38px top no-repeat;	
+    cursor: pointer;
+}
+
+input[type="checkbox"] + label, input[type="radio"] + label {
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+    &:hover {
+        cursor: pointer;
+    }
+
+}
+
+input[type="checkbox"]:checked + label .weirdPlaceholder {
+    background:url(check_sheet.png) -19px top no-repeat;
+}
+
+input[type="radio"]:checked + label .weirdPlaceholder {
+	background:url(check_sheet.png) -57px top no-repeat;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+}
+
+body {
+	&::-webkit-scrollbar {
+	    height: 8px;
+	    width: 8px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: rgba(0,0,0,0.2);
+	}     
+	&::-webkit-scrollbar-thumb {
+		background-color: #888;
+		border-radius: 2px;
+		&:hover {
+			background-color: #aaa;
+		}
+	}
+}
+
+::-moz-selection{
+	background: #444;
+	color:#fff;
+	text-shadow: 0 0 transparent;
+}
+
+::selection{
+	background: #444;
+	color:#fff;
+	text-shadow: 0 0 transparent;
+}
+
+a {
+	color: #A5B2EA;
+	text-decoration: none;
+	transition: 0.5s;
+	&:hover {
+		cursor: pointer;
+		color: #BFCBFF;
+		text-shadow: 0px 1.5px 4px rgba(255,255,255,0.4);
+	}
+}
+
+body {
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #4f4f4f;
+	.bodyWrap {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+}
+
+
+.jumboHead {
+	margin-left: $navWidth + 20;
+	margin-bottom: 10px;
+	h1 {
+		display: inline-block;
+		font-weight: 300;
+		font-family: Bunya Light;
+		font-size: 60px;
+		color: white;
+		text-shadow: 2px 5px 4px #222;
+	}
+}
+
+.error {
+	color: white;
+	font-family: $bodyFontStack;
+	font-size: 20px;
+}
+
+#navList {
+	width: $navWidth;
+	float: left;
+	border-right: 2px solid #bbb;
+	// Shadow only on left edge
+	box-shadow: 8px 0px 3px -6px rgba(0,0,0,0.3);
+	li {
+		list-style-type: none;
+		overflow: auto;
+		a {
+			-webkit-user-select: none; /* Chrome/Safari */        
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+ */
+
+			/* Rules below not implemented in browsers yet */
+			-o-user-select: none;
+			user-select: none;
+
+			float: right;
+			text-transform: uppercase;
+			padding: 10px;
+			padding-right: 20px;
+			display: inline-block;
+			// width: 100%;
+			color: #ccc;
+			font-family: $condensedFontStack;
+			letter-spacing: 3px;
+			text-decoration: none;
+			transition: 0.5s;
+			position: relative;
+			text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+			// Class add by JS
+			&.active {
+				background: linear-gradient(to left, rgba(255,255,255,0.15), transparent);
+				color: white;
+			}
+			&:hover {
+				color: white;
+				cursor: pointer;
+			}
+			&::before {
+				content: "";
+				opacity: 0;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 10;
+				background: linear-gradient(to left, rgba(255,255,255,0.2), transparent 80%);
+				transition: 0.2s
+			}
+			&:hover::before{
+				opacity: 1;
+			}
+		}
+	}
+}
+
+#mainWrap {
+	margin-left: $navWidth + 20;
+}
+
+@keyframes fadeInAnimation {
+	from {
+		opacity: 0.4;
+		position: relative;
+		right: 10px;
+	}
+	to {
+		opacity: 1;
+		position: relative;
+		right: 0px;
+	}
+}
+
+.infoBox {
+	padding: 10px;
+	opacity: 1;
+	transition: opacity 0.5s;
+	@include box();
+	&.fade-in {
+		-webkit-animation-name: fadeInAnimation; /* Safari 4.0 - 8.0 */
+		-webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
+		-webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
+		animation-name: fadeInAnimation;
+		animation-duration: 0.5s;
+		animation-iteration-count: 1;
+	}
+	&.invisible {
+		@include clearBox();
+	}
+}
+
+#stalkeeStatus {
+	.teeArt {
+		width: auto;
+		height: 150px;
+		padding: 10px;
+	}
+	.title {
+		font-family: $condensedFontStack;
+		color: #ccc;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-size: 20px;
+	}
+	.sub {
+		font-family: $bodyFontStack;
+		font-size: 14px;
+		text-transform: none;
+		color: #888;
+	}
+}
+
+#masterServerStatus {
+	font-family: $bodyFontStack;
+	font-size: 16px;
+	color: #aaa;
+	.failed {
+		margin-top: 10px;
+		border-top: 2px solid #ccc;
+		padding-top: 10px;
+		p {
+			font-family: $monoFontStack;
+			color: #eee;
+		}
+	}
+	.number {
+		font-weight: 700;
+		font-size: 20px;
+		color: #ccc;
+	}
+}
+
+#stalkeeList {
+	@extend #stalkeeStatus;
+	.title {
+		margin-bottom: 10px;
+	}
+
+}
+
+.stalkeeStatusTable, .stalkeeListTable {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+
+	td, th {
+		text-align: left;
+		padding: 8px 5px;
+		&:last-of-type {
+			text-align: right;
+			width: 1%;
+			white-space: nowrap;
+		}
+	}
+
+	th {
+		font-size: 18px;
+		font-family: $bodyFontStack;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		color: #bbb;
+		border-bottom: 2px solid #999;
+	}
+
+	tr {
+		&:nth-child(even) {
+			background-color: #505050;
+		}
+		&:nth-child(odd) {
+			background-color: #444;
+		}
+		&:first-of-type {
+			background-color: transparent;
+		}
+		&:last-of-type {
+			border-bottom: 2px solid #555;
+		}
+	}
+
+	.oneLine {
+		white-space: nowrap;
+		font-size: $buttonFontSize;
+		box-sizing: border-box;
+	}
+
+	.nullClan {
+		@include nullText;
+	}
+}
+
+// Requires an overlay div for animation
+.button {
+	display: inline-block;
+	z-index: 1;
+	position: relative;
+	padding: 5px 10px;
+	font-family: $buttonFontStack;
+	font-size: $buttonFontSize;
+	font-weight: 300;
+	color: #fff;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #7b7b7b;
+	box-shadow: 0 1px 10px 0 rgba(255,255,255,0.2);
+	background-color: #444;
+	background: linear-gradient(0deg, #060606, #484848);
+	background-size: 400% 400%;
+	transition: 0.5s;
+	&:hover {
+		background-color: #555;
+		background-position: 10px;
+		z-index: 0;
+		cursor: pointer;
+	}
+	&.last {
+		vertical-align: top;
+		border-left: 0px;
+		display: inline-block;
+		.delete {
+			max-width: 12px;
+			max-height: 12px;
+		}
+	}
+}
+
+.settings {
+	.block {
+		margin-bottom: 10px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	#refreshDelayWrap, #requestsFailedToleranceWrap, #totalServerThresholdWrap {
+		#refreshDelayHeader, #requestsFailedToleranceHeader, #totalServerThresholdHeader {
+			font-family: $bodyFontStack;
+		}
+		#refreshDelayButtonWrap, #requestsFailedToleranceButtonWrap, #totalServerThresholdButtonWrap {
+			margin-left: 20px;
+			label {
+				display: inline-block;
+				color: #ccc;
+				margin-top: 5px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	.lightColor {
+		color: #bbb;
+	}
+}
+
+#loadingWrap {
+	position: relative;
+	/* "direct" class is the default.
+	 * Replaced by "peripheral" after the first time. */
+	#dynamicLoading.direct {
+		@extend #stalkeeStatus;
+		color: #aaa;
+		font-size: 14px;
+	}
+	#dynamicLoading.peripheral {
+		font-size: 14px;
+		position: absolute;
+		overflow: hidden;
+		top: 0;
+		right: 0;
+		padding: 5px;
+		// Needs to be below modal
+		z-index: 5;
+		background-color: #303030;
+		color: #aaa;
+		border-radius: 0 2px 0 2px;
+		// box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+	}
+}
+
+#serverList {
+	font-family: $monoFontStack;
+	font-size: 14px;
+	ul {
+		margin-left: 25px;
+	}
+}
+
+#stalkerAbout {
+	div.block:last-child {
+		margin-bottom: 0;
+	}
+	.block {
+		margin-bottom: 1.2em;
+		h3 {
+			color: #eee;
+			font-family: $condensedFontStack;
+			letter-spacing: 1px;
+		}
+		p {
+			color: #ddd;
+		}
+		ul {
+			color: #ddd;
+			margin-left: 1.5em;
+			li, .item {
+				margin-top: 0.6em;
+			}
+			list-style-type: square;
+		}
+	}
+}
+
+.hiddenTextWrap {
+	background-color: rgba(255,255,255,0.1);
+	padding: 5px;
+	border-radius: 2px;
+	.toggleArrowWrap {
+		position: relative;
+		display: inline;
+		.toggleArrow {
+			position: absolute;
+			height: 16px;
+			top: 0; bottom: 0;
+			margin: auto;
+		}		
+	}
+
+	.header {
+		padding-left: 25px;
+		display: inline-block;
+
+		font-family: $condensedFontStack;
+		text-transform: uppercase;
+		color: #dfdfdf;
+		font-size: 18px;
+		transition: color 0.5s;
+		-webkit-user-select: none; /* Chrome/Safari */        
+		-moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* IE10+ */
+
+		/* Rules below not implemented in browsers yet */
+		-o-user-select: none;
+		user-select: none;
+		&:hover {
+			cursor: pointer;
+			color: #fff;
+		}
+	}
+	.hidden {
+		height: 0;
+		overflow: hidden;
+		padding-left: 1.5em;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: #aaa;
+			margin-top: 5px;
+			height: 2px;
+			z-index: 10;
+		}
+		.settingsDetailedList {
+			margin-top: 18px;
+			padding-bottom: 5px;
+			margin-left: 0 !important;
+			padding-left: 0;
+			li {
+				list-style-type: none;
+				margin-top: 15px !important;
+				.hiddenHead1 {
+					font-family: Open Sans;
+					font-size: 16px;
+				}
+				.hiddenParagraph1 {
+					margin-left: 10px;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}

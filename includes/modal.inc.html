@@ -1,0 +1,63 @@
+<!-- Modal Form -->
+<div id="mainModal" class="modal">
+	<div class="modal-content">
+		<div class="modal-header">
+			<span class="close" onclick="modalFunctions.closeModal()">&times;</span>
+		    <h2 id="modalHeaderText"></h2>
+		</div>
+	  	<div class="modal-body">
+
+			<!-- Edit or Add Stalkee -->
+	  		<div id="editAddForm">
+	  			<div class="inputField">
+		  			<label for="stalkeeName">Stalkee Name:<br>
+			  			<!-- Value will be filled in by JS (to specify original value) -->
+		  				<input type="text" id="stalkeeName" autocomplete="off" spellcheck="false" maxlength="15" value="" required>
+		  			</label>
+	  			</div>
+	  			<div class="inputField">
+		  			<label for="stalkeeClan">Stalkee Clan:<br>
+		  			<!-- Value will be filled in by JS (to specify proper value) -->
+		  				<input type="text" id="stalkeeClan" autocomplete="off" spellcheck="false" maxlength="11" value="">
+		  			</label>
+	  			</div>
+	  			<div class="inputField">
+		  				<!-- Checked will be filled in by JS (to specify original value) -->
+		  				<input type="checkbox" id="ignoreClan">
+		  				<label for="ignoreClan"><span class="weirdPlaceholder"></span>Ignore Clan</label>
+	  			</div>
+	  			<div class="inputField last">
+	  				<!-- Value will be filled in by JS (to specify proper value) -->
+		  			<input id="stalkeeID" type="hidden" value="">
+		  			<!-- Value will be filled in by JS (to specify proper value)-->
+		  			<input id="submitButton" class = "button" type="submit" value="">
+	  			</div>
+	  		</div>
+
+	  		<!-- Delete Stalkee -->
+	  		<div id="deleteForm">
+  				<div class="inputField">
+  					<p>Are you fucking serious?</p>
+				</div>
+	  			<div class="inputField">
+	  				<!-- Next comment is to remove space between buttons -->
+	  				<div id="cancelButton" class="button" onclick="modalFunctions.closeModal()">Cancel</div><!--
+	  				--><input id="submitButton" class="button last" type="submit" value="Delete">
+	  			</div>
+	  		</div>
+
+			<!-- Clear All Confirm -->
+			<div id="clearAllForm">
+	  			<div class="inputField">
+	  				<p>All your stalkees will be removed.</p>
+	  				<p>Are you fucking serious?</p>
+	  			</div>
+	  			<div class="inputField">
+	  				<!-- Next comment is to remove space between buttons -->
+	  				<div class="button" onclick="modalFunctions.closeModal()">Cancel</div><!--
+	  				--><input id="submitButton" class="button last" type="submit" onclick="userData.clearAll()" value="Clear All">
+	  			</div>
+  			</div>
+  		</div>
+	</div>
+</div>

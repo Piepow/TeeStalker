@@ -1,0 +1,433 @@
+/* 
+ * Space between elements should be either 10px or something
+*/
+@font-face {
+  font-family: Bunya Light;
+  font-weight: normal;
+  src: url(BunyaLight.ttf); }
+input[type="checkbox"], input[type="radio"] {
+  display: none; }
+
+input[type="checkbox"] + label .weirdPlaceholder {
+  display: inline-block;
+  white-space: nowrap;
+  width: 19px;
+  height: 19px;
+  margin: -2px 10px 0 0;
+  vertical-align: middle;
+  background: url(check_sheet.png) left top no-repeat;
+  cursor: pointer; }
+
+input[type="radio"] + label .weirdPlaceholder {
+  display: inline-block;
+  white-space: nowrap;
+  width: 19px;
+  height: 19px;
+  margin: -2px 10px 0 0;
+  vertical-align: middle;
+  background: url(check_sheet.png) -38px top no-repeat;
+  cursor: pointer; }
+
+input[type="checkbox"] + label, input[type="radio"] + label {
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none; }
+  input[type="checkbox"] + label:hover, input[type="radio"] + label:hover {
+    cursor: pointer; }
+
+input[type="checkbox"]:checked + label .weirdPlaceholder {
+  background: url(check_sheet.png) -19px top no-repeat; }
+
+input[type="radio"]:checked + label .weirdPlaceholder {
+  background: url(check_sheet.png) -57px top no-repeat; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body::-webkit-scrollbar {
+  height: 8px;
+  width: 8px; }
+body::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.2); }
+body::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 2px; }
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa; }
+
+::-moz-selection {
+  background: #444;
+  color: #fff;
+  text-shadow: 0 0 transparent; }
+
+::selection {
+  background: #444;
+  color: #fff;
+  text-shadow: 0 0 transparent; }
+
+a {
+  color: #A5B2EA;
+  text-decoration: none;
+  transition: 0.5s; }
+  a:hover {
+    cursor: pointer;
+    color: #BFCBFF;
+    text-shadow: 0px 1.5px 4px rgba(255, 255, 255, 0.4); }
+
+body {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #4f4f4f; }
+  body .bodyWrap {
+    max-width: 800px;
+    margin: 0 auto; }
+
+.jumboHead {
+  margin-left: 220px;
+  margin-bottom: 10px; }
+  .jumboHead h1 {
+    display: inline-block;
+    font-weight: 300;
+    font-family: Bunya Light;
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 5px 4px #222; }
+
+.error {
+  color: white;
+  font-family: Open Sans, Roboto, Helvetica, sans-serif;
+  font-size: 20px; }
+
+#navList {
+  width: 200px;
+  float: left;
+  border-right: 2px solid #bbb;
+  box-shadow: 8px 0px 3px -6px rgba(0, 0, 0, 0.3); }
+  #navList li {
+    list-style-type: none;
+    overflow: auto; }
+    #navList li a {
+      -webkit-user-select: none;
+      /* Chrome/Safari */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* IE10+ */
+      /* Rules below not implemented in browsers yet */
+      -o-user-select: none;
+      user-select: none;
+      float: right;
+      text-transform: uppercase;
+      padding: 10px;
+      padding-right: 20px;
+      display: inline-block;
+      color: #ccc;
+      font-family: Open Sans Condensed, Roboto Condensed, Arial Nova Condensed, Arial Condensed, Helvetica Condensed;
+      letter-spacing: 3px;
+      text-decoration: none;
+      transition: 0.5s;
+      position: relative;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4); }
+      #navList li a.active {
+        background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+        color: white; }
+      #navList li a:hover {
+        color: white;
+        cursor: pointer; }
+      #navList li a::before {
+        content: "";
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0.2), transparent 80%);
+        transition: 0.2s; }
+      #navList li a:hover::before {
+        opacity: 1; }
+
+#mainWrap {
+  margin-left: 220px; }
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0.4;
+    position: relative;
+    right: 10px; }
+  to {
+    opacity: 1;
+    position: relative;
+    right: 0px; } }
+.infoBox {
+  padding: 10px;
+  opacity: 1;
+  transition: opacity 0.5s;
+  margin-bottom: 20px;
+  background: #3a3a3a;
+  color: white;
+  border-radius: 2px;
+  border-bottom: 1px solid #777;
+  font-family: Open Sans, Roboto, Helvetica, sans-serif;
+  box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.3); }
+  .infoBox.fade-in {
+    -webkit-animation-name: fadeInAnimation;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.5s;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 1;
+    /* Safari 4.0 - 8.0 */
+    animation-name: fadeInAnimation;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1; }
+  .infoBox.invisible {
+    margin-bottom: 20px;
+    padding: 0;
+    background: none;
+    color: white;
+    border-radius: 0;
+    border-bottom: none;
+    font-family: Open Sans, Roboto, Helvetica, sans-serif;
+    box-shadow: none; }
+
+#stalkeeStatus .teeArt, #stalkeeList .teeArt, #loadingWrap #dynamicLoading.direct .teeArt {
+  width: auto;
+  height: 150px;
+  padding: 10px; }
+#stalkeeStatus .title, #stalkeeList .title, #loadingWrap #dynamicLoading.direct .title {
+  font-family: Open Sans Condensed, Roboto Condensed, Arial Nova Condensed, Arial Condensed, Helvetica Condensed;
+  color: #ccc;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 20px; }
+#stalkeeStatus .sub, #stalkeeList .sub, #loadingWrap #dynamicLoading.direct .sub {
+  font-family: Open Sans, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  text-transform: none;
+  color: #888; }
+
+#masterServerStatus {
+  font-family: Open Sans, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #aaa; }
+  #masterServerStatus .failed {
+    margin-top: 10px;
+    border-top: 2px solid #ccc;
+    padding-top: 10px; }
+    #masterServerStatus .failed p {
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+      color: #eee; }
+  #masterServerStatus .number {
+    font-weight: 700;
+    font-size: 20px;
+    color: #ccc; }
+
+#stalkeeList .title {
+  margin-bottom: 10px; }
+
+.stalkeeStatusTable, .stalkeeListTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px; }
+  .stalkeeStatusTable td, .stalkeeStatusTable th, .stalkeeListTable td, .stalkeeListTable th {
+    text-align: left;
+    padding: 8px 5px; }
+    .stalkeeStatusTable td:last-of-type, .stalkeeStatusTable th:last-of-type, .stalkeeListTable td:last-of-type, .stalkeeListTable th:last-of-type {
+      text-align: right;
+      width: 1%;
+      white-space: nowrap; }
+  .stalkeeStatusTable th, .stalkeeListTable th {
+    font-size: 18px;
+    font-family: Open Sans, Roboto, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #bbb;
+    border-bottom: 2px solid #999; }
+  .stalkeeStatusTable tr:nth-child(even), .stalkeeListTable tr:nth-child(even) {
+    background-color: #505050; }
+  .stalkeeStatusTable tr:nth-child(odd), .stalkeeListTable tr:nth-child(odd) {
+    background-color: #444; }
+  .stalkeeStatusTable tr:first-of-type, .stalkeeListTable tr:first-of-type {
+    background-color: transparent; }
+  .stalkeeStatusTable tr:last-of-type, .stalkeeListTable tr:last-of-type {
+    border-bottom: 2px solid #555; }
+  .stalkeeStatusTable .oneLine, .stalkeeListTable .oneLine {
+    white-space: nowrap;
+    font-size: 15px;
+    box-sizing: border-box; }
+  .stalkeeStatusTable .nullClan, .stalkeeListTable .nullClan {
+    color: #a9a9a9;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: Open Sans Condensed, Roboto Condensed, Arial Nova Condensed, Arial Condensed, Helvetica Condensed; }
+
+.button {
+  display: inline-block;
+  z-index: 1;
+  position: relative;
+  padding: 5px 10px;
+  font-family: Open Sans, Roboto, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #7b7b7b;
+  box-shadow: 0 1px 10px 0 rgba(255, 255, 255, 0.2);
+  background-color: #444;
+  background: linear-gradient(0deg, #060606, #484848);
+  background-size: 400% 400%;
+  transition: 0.5s; }
+  .button:hover {
+    background-color: #555;
+    background-position: 10px;
+    z-index: 0;
+    cursor: pointer; }
+  .button.last {
+    vertical-align: top;
+    border-left: 0px;
+    display: inline-block; }
+    .button.last .delete {
+      max-width: 12px;
+      max-height: 12px; }
+
+.settings .block {
+  margin-bottom: 10px; }
+  .settings .block:last-child {
+    margin-bottom: 0; }
+.settings #refreshDelayWrap #refreshDelayHeader, .settings #refreshDelayWrap #requestsFailedToleranceHeader, .settings #refreshDelayWrap #totalServerThresholdHeader, .settings #requestsFailedToleranceWrap #refreshDelayHeader, .settings #requestsFailedToleranceWrap #requestsFailedToleranceHeader, .settings #requestsFailedToleranceWrap #totalServerThresholdHeader, .settings #totalServerThresholdWrap #refreshDelayHeader, .settings #totalServerThresholdWrap #requestsFailedToleranceHeader, .settings #totalServerThresholdWrap #totalServerThresholdHeader {
+  font-family: Open Sans, Roboto, Helvetica, sans-serif; }
+.settings #refreshDelayWrap #refreshDelayButtonWrap, .settings #refreshDelayWrap #requestsFailedToleranceButtonWrap, .settings #refreshDelayWrap #totalServerThresholdButtonWrap, .settings #requestsFailedToleranceWrap #refreshDelayButtonWrap, .settings #requestsFailedToleranceWrap #requestsFailedToleranceButtonWrap, .settings #requestsFailedToleranceWrap #totalServerThresholdButtonWrap, .settings #totalServerThresholdWrap #refreshDelayButtonWrap, .settings #totalServerThresholdWrap #requestsFailedToleranceButtonWrap, .settings #totalServerThresholdWrap #totalServerThresholdButtonWrap {
+  margin-left: 20px; }
+  .settings #refreshDelayWrap #refreshDelayButtonWrap label, .settings #refreshDelayWrap #requestsFailedToleranceButtonWrap label, .settings #refreshDelayWrap #totalServerThresholdButtonWrap label, .settings #requestsFailedToleranceWrap #refreshDelayButtonWrap label, .settings #requestsFailedToleranceWrap #requestsFailedToleranceButtonWrap label, .settings #requestsFailedToleranceWrap #totalServerThresholdButtonWrap label, .settings #totalServerThresholdWrap #refreshDelayButtonWrap label, .settings #totalServerThresholdWrap #requestsFailedToleranceButtonWrap label, .settings #totalServerThresholdWrap #totalServerThresholdButtonWrap label {
+    display: inline-block;
+    color: #ccc;
+    margin-top: 5px; }
+    .settings #refreshDelayWrap #refreshDelayButtonWrap label:last-child, .settings #refreshDelayWrap #requestsFailedToleranceButtonWrap label:last-child, .settings #refreshDelayWrap #totalServerThresholdButtonWrap label:last-child, .settings #requestsFailedToleranceWrap #refreshDelayButtonWrap label:last-child, .settings #requestsFailedToleranceWrap #requestsFailedToleranceButtonWrap label:last-child, .settings #requestsFailedToleranceWrap #totalServerThresholdButtonWrap label:last-child, .settings #totalServerThresholdWrap #refreshDelayButtonWrap label:last-child, .settings #totalServerThresholdWrap #requestsFailedToleranceButtonWrap label:last-child, .settings #totalServerThresholdWrap #totalServerThresholdButtonWrap label:last-child {
+      margin-bottom: 0; }
+.settings .lightColor {
+  color: #bbb; }
+
+#loadingWrap {
+  position: relative;
+  /* "direct" class is the default.
+   * Replaced by "peripheral" after the first time. */ }
+  #loadingWrap #dynamicLoading.direct {
+    color: #aaa;
+    font-size: 14px; }
+  #loadingWrap #dynamicLoading.peripheral {
+    font-size: 14px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    z-index: 5;
+    background-color: #303030;
+    color: #aaa;
+    border-radius: 0 2px 0 2px; }
+
+#serverList {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 14px; }
+  #serverList ul {
+    margin-left: 25px; }
+
+#stalkerAbout div.block:last-child {
+  margin-bottom: 0; }
+#stalkerAbout .block {
+  margin-bottom: 1.2em; }
+  #stalkerAbout .block h3 {
+    color: #eee;
+    font-family: Open Sans Condensed, Roboto Condensed, Arial Nova Condensed, Arial Condensed, Helvetica Condensed;
+    letter-spacing: 1px; }
+  #stalkerAbout .block p {
+    color: #ddd; }
+  #stalkerAbout .block ul {
+    color: #ddd;
+    margin-left: 1.5em;
+    list-style-type: square; }
+    #stalkerAbout .block ul li, #stalkerAbout .block ul .item {
+      margin-top: 0.6em; }
+
+.hiddenTextWrap {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border-radius: 2px; }
+  .hiddenTextWrap .toggleArrowWrap {
+    position: relative;
+    display: inline; }
+    .hiddenTextWrap .toggleArrowWrap .toggleArrow {
+      position: absolute;
+      height: 16px;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
+  .hiddenTextWrap .header {
+    padding-left: 25px;
+    display: inline-block;
+    font-family: Open Sans Condensed, Roboto Condensed, Arial Nova Condensed, Arial Condensed, Helvetica Condensed;
+    text-transform: uppercase;
+    color: #dfdfdf;
+    font-size: 18px;
+    transition: color 0.5s;
+    -webkit-user-select: none;
+    /* Chrome/Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none; }
+    .hiddenTextWrap .header:hover {
+      cursor: pointer;
+      color: #fff; }
+  .hiddenTextWrap .hidden {
+    height: 0;
+    overflow: hidden;
+    padding-left: 1.5em;
+    position: relative; }
+    .hiddenTextWrap .hidden::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #aaa;
+      margin-top: 5px;
+      height: 2px;
+      z-index: 10; }
+    .hiddenTextWrap .hidden .settingsDetailedList {
+      margin-top: 18px;
+      padding-bottom: 5px;
+      margin-left: 0 !important;
+      padding-left: 0; }
+      .hiddenTextWrap .hidden .settingsDetailedList li {
+        list-style-type: none;
+        margin-top: 15px !important; }
+        .hiddenTextWrap .hidden .settingsDetailedList li .hiddenHead1 {
+          font-family: Open Sans;
+          font-size: 16px; }
+        .hiddenTextWrap .hidden .settingsDetailedList li .hiddenParagraph1 {
+          margin-left: 10px;
+          font-size: 14px; }
+
+/*# sourceMappingURL=style.css.map */
