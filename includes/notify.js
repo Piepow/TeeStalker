@@ -56,14 +56,6 @@ var notify = (function (public, arrayDifference) {
   			_notifyStalkeeStatus(stalkeeName, gametype, stalkeeAction);
   		};
 	}
-	// function _removeServerDetails(stalkeeArray) {
-	// 	/* stalkeeArray => [stalkeeName, gametype, IP:port, stalkeeClan] */
-	// 	newStalkeeArray = stalkeeArray;
-	// 	for (var i = 0; i < stalkeeArray.length; i++) {
-	// 		newStalkeeArray[i].splice(1, 2);
-	// 	}
-	// 	return newStalkeeArray;
-	// }
 
 	function _notifyMovingStalkeeStatus(stalkeeName, gametypeFrom, gametypeTo) {
 		var notification;

@@ -8,7 +8,7 @@ var ajaxStalkees = (function (public, modalFunctions, browserStorage, nav) {
 	var dontStartFlag = false;
 
 	function _ajax(url, cFunction, usePOST, POSTData) {
-		// Default parameters in for pre-2015 JavaScript
+		// Default parameters for pre-2015 JavaScript
 		usePOST = typeof usePOST !== 'undefined' ? usePOST : false;
 		xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {

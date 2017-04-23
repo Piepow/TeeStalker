@@ -61,16 +61,6 @@ var arrayDifference = (function () {
 		return unmatched;
 	};
 
-	/*
-
-	[Hey, fuck you.2, Fuckingshit, snailx3]
-	[Hey, fuck you.1, snailx3]
-
-	[Hey, fuck you.1]
-	[Hey, fuck you.1, Hey, fuck you.2, Fuckingshit]
-
-	*/
-
 	public.oneWay = function (array1, array2, unmatched) {
 		for (var i = 0; i < array1.length; i++) {
 			var foundMatch = false;
