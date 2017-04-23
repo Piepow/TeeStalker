@@ -45,6 +45,5 @@
 	<ul>
 		<li>Fork this project on <a href="https://github.com/Piepow/TeeStalker">GitHub</a>.</li>
 		<li>Feel free to PM me on the <a href="https://forum.ddnet.tw/memberlist.php?mode=viewprofile&u=531">DDNet Forum</a> or on the <a href="https://www.teeworlds.com/forum/profile.php?id=126896">Teeworlds Forum</a>.</li>
-		<li>You can usually find me ingame on Teeworlds with the nickname 'Hey, fuck you!'</li>
 	</ul>
 </div>
