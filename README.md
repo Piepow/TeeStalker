@@ -4,7 +4,7 @@ Receive browser notifications for every move your Teeworlds stalkees make (joini
 <img src="http://i.imgur.com/uEOj8mu.png">
 
 ## Installation
-This is a web app, so simply snatch these files and put them in your server directory. PHP is required. Also, [TwRequest.php](includes/TwRequest.php) seems to require ports.
+This is a web app, so simply snatch these files and put them in your server directory. PHP is required. Also, [TwRequest.php](includes/TwRequest.php) needs sockets, so your host must also support that.
 > Note: hosting this locally may cause some network lags
 
 ## Code Overview
