@@ -1,4 +1,7 @@
 # TeeStalker
+```diff
+This project is no longer being maintained.
+```
 Receive browser notifications for every move your Teeworlds stalkees make (joining/leaving/changing Teeworlds Servers).
 
 <img src="http://i.imgur.com/uEOj8mu.png">
