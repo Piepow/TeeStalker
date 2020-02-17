@@ -47,6 +47,10 @@
 			<div id = "totalServerThresholdWrap" class= "block">
 				<p id = "totalServerThresholdHeader">Minimum threshold for loaded servers:</p>
 					<div id = "totalServerThresholdButtonWrap">
+						<input type = "radio" name = "totalServerThreshold" value = "100" id = "totalServerThreshold100"><label for = "totalServerThreshold100"><span class= "weirdPlaceholder"></span>100 servers</label><br>
+						<input type = "radio" name = "totalServerThreshold" value = "200" id = "totalServerThreshold200"><label for = "totalServerThreshold200"><span class= "weirdPlaceholder"></span>200 servers</label><br>
+						<input type = "radio" name = "totalServerThreshold" value = "300" id = "totalServerThreshold300"><label for = "totalServerThreshold300"><span class= "weirdPlaceholder"></span>300 servers</label><br>
+						<input type = "radio" name = "totalServerThreshold" value = "400" id = "totalServerThreshold400"><label for = "totalServerThreshold400"><span class= "weirdPlaceholder"></span>400 servers</label><br>
 						<input type = "radio" name = "totalServerThreshold" value = "500" id = "totalServerThreshold500"><label for = "totalServerThreshold500"><span class= "weirdPlaceholder"></span>500 servers</label><br>
 						<input type = "radio" name = "totalServerThreshold" value = "600" id = "totalServerThreshold600"><label for = "totalServerThreshold600"><span class= "weirdPlaceholder"></span>600 servers</label><br>
 						<input type = "radio" name = "totalServerThreshold" value = "700" id = "totalServerThreshold700"><label for = "totalServerThreshold700"><span class= "weirdPlaceholder"></span>700 servers</label><br>
